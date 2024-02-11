@@ -274,7 +274,7 @@ class Game {
   }
 
   gameLoop() {
-    this.update();
+    this.flyBird();
 
     this.render();
 
