@@ -226,7 +226,7 @@ class Game {
           localStorage.setItem("bestScore", this.bestScore);
           this.ctx.fillStyle = "#FFFFFF";
           this.ctx.font = "35px 'Pixelify Sans', sans-serif";
-          this.ctx.fillText("GAME OVER!: " + this.score, 5, 115);
+          this.ctx.fillText("GAME OVER!: ");
           console.log(this.bestScore);
         }
       }
@@ -235,7 +235,7 @@ class Game {
         this.btnRestart.style.display = "flex";
         this.ctx.fillStyle = "#FFFFFF";
         this.ctx.font = "35px 'Pixelify Sans', sans-serif";
-        this.ctx.fillText("GAME OVER!: " + this.score, 5, 115);
+        this.ctx.fillText("GAME OVER!:");
       }
     }
   }
