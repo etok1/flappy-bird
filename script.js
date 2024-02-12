@@ -89,8 +89,12 @@ class Game {
     this.btnRestart.addEventListener("click", (e) => this.restart(e));
   }
 
-  flyBird(e) {
-    if (e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyX") {
+  flyBird(event) {
+    if (
+      event.code === "Space" ||
+      event.code === "ArrowUp" ||
+      event.code === "KeyX"
+    ) {
       this.spaceUp = -6;
     }
   }
@@ -226,7 +230,7 @@ class Game {
           localStorage.setItem("bestScore", this.bestScore);
           this.ctx.fillStyle = "#FFFFFF";
           this.ctx.font = "35px 'Pixelify Sans', sans-serif";
-          this.ctx.fillText("GAME OVER!: ");
+          this.ctx.fillText("GAME OVER! ", 5, 115);
           console.log(this.bestScore);
         }
       }
@@ -235,7 +239,7 @@ class Game {
         this.btnRestart.style.display = "flex";
         this.ctx.fillStyle = "#FFFFFF";
         this.ctx.font = "35px 'Pixelify Sans', sans-serif";
-        this.ctx.fillText("GAME OVER!:");
+        this.ctx.fillText("GAME OVER!", 5, 115);
       }
     }
   }
@@ -275,7 +279,6 @@ class Game {
 
   gameLoop() {
     this.flyBird();
-
     this.render();
 
     requestAnimationFrame(() => this.gameLoop());
